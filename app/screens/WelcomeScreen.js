@@ -5,13 +5,15 @@ import FadeInView from '../../constants/FadeInView';
 import { useFonts } from 'expo-font';
 import { getStorage, ref, getDownloadURL } from "firebase/storage";
 import { fb_app, fb_storage } from '../../firebaseConfig';
+import { Colors } from 'react-native/Libraries/NewAppScreen';
 
 function WelcomeScreen({navigation}) {
-    [cat, setCat] = useState("");
+    //fetch from database
+    [logo, setLogo] = useState("");
     useEffect(() => {
-        getDownloadURL(ref(fb_storage, 'tests/cat-10-e1573844975155-scaled.jpg'))
+        getDownloadURL(ref(fb_storage, 'eb-logo.png'))
         .then((url) => {
-            setCat(url);
+            setLogo(url);
             // Or inserted into an <img> element
         })
         .catch((error) => {
@@ -40,28 +42,24 @@ function WelcomeScreen({navigation}) {
         <View style={styles.container}> 
             <FadeInView>
                 <Text style={[styles.title, {fontFamily: "DM-Sans-B"}]}>
-                    EMPATHY BYTES
+                    Empathy Bytes
                 </Text>
             </FadeInView>
             <FadeInView delay={250} >
-                <View style={styles.imagecontainer}>
-                    {cat.length == 0 ? 
-                     <></> : <Image
-                     style={styles.logo}
-                     source={{uri: `${cat}` }}
-                 />
-                    }
+                <View style={styles.imageContainer}>
+                    {/*adding image from storage*/}
+                    {logo.length == 0 ? <></> : <Image style={styles.logo} source={{uri: `${logo}` }}/>}
                 </View>
             </FadeInView>
             <FadeInView delay={500}>
-                <Text style={[styles.text, styles.marginBottom, {fontFamily: "DM-Sans-B"}]}>
-                    Creating Tech Centered Around Empathy
+                <Text style={[styles.text, {fontFamily: "DM-Sans-B"}]}>
+                    creating tech centered around empathy
                 </Text>
             </FadeInView>
             <FadeInView delay={750}>
                 <TouchableOpacity style={styles.goButton} onPress={() => navigation.navigate('Home')} >
-                    <Text  style={styles.goButtonText}>
-                        Explore
+                    <Text style={styles.goButtonText}>
+                        explore
                     </Text>
                 </TouchableOpacity>
             </FadeInView>
@@ -74,28 +72,29 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: "center",
         justifyContent: "center",
-        backgroundColor: COLORS.primary,
+        backgroundColor: COLORS.tertiary,
         // borderColor: "red",
         // borderWidth: 2,
     },
-    imagecontainer: {
-        alignItems: "center",
-        justifyContent: "center",
+    imageContainer: {
+        //alignItems: "center",
+        //justifyContent: "center",
         padding: 30,
     },
     text: {
-        color: "white",
-        fontSize: 30,
+        color: COLORS.primary,
+        fontSize: 20,
         fontWeight: "bold",
         // position: "absolute",
-        textAlign: "center"
+        textAlign: "center",
+        paddingBottom: 30,
     },
     logo: {
-        width: 80,
-        height: 80,
-        padding: 80,
-        borderColor: "black",
-        borderWidth: 3,
+        width: 200,
+        height: 200,
+        //padding: 80,
+        //borderColor: COLORS.primary,
+        //borderWidth: 3,
         borderRadius: 100
     },
     goButton: {
@@ -104,26 +103,24 @@ const styles = StyleSheet.create({
         width: 100,
         alignItems: "center",
         justifyContent: "center",
-        backgroundColor: "#B3A369",
+        backgroundColor: COLORS.secondary,
     },
     goButtonText: {
-        color: COLORS.secondary,
+        color: "black",
         fontWeight: "bold",
         textAlign: "center",
         fontSize: 15,
     },
     title: {
-        fontSize: 75,
-        fontWeight: "bold",
-        color: "white",
+        fontSize: 60,
+        //fontWeight: "bold",
+        color: COLORS.primary,
         textAlign: "center",
-        textShadowColor: "rgba(0, 0, 0, 1)",
-        textShadowOffset: {width: -1, height: 10},
-        textShadowRadius: 10,
+        //textShadowColor: "rgba(0, 0, 0, 1)",
+        //textShadowOffset: {width: -1, height: 10},
+        //textShadowRadius: 10,
     },
-    marginBottom: {
-        marginBottom: 30,
-    },
+    
 })
 
 export default WelcomeScreen;
