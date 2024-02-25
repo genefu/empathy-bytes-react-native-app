@@ -5,7 +5,6 @@ import FadeInView from '../../constants/FadeInView';
 import { useFonts } from 'expo-font';
 import { getStorage, ref, getDownloadURL } from "firebase/storage";
 import { fb_app, fb_storage } from '../../firebaseConfig';
-import { Colors } from 'react-native/Libraries/NewAppScreen';
 
 function WelcomeScreen({navigation}) {
     //fetch from database

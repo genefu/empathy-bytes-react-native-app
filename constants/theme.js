@@ -1,9 +1,9 @@
 // Change later, just template code
 
 const COLORS = {
-  primary: "#003057",
-  secondary: "#ABA174",
-  tertiary: "#FFFBE7",
+  primary: "#003057",//navy
+  secondary: "#ABA174",//gold
+  tertiary: "#FFFBE7",//beige
 
   gray: "#83829A",
   gray2: "#C1C0C8",
