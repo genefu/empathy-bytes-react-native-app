@@ -2,7 +2,6 @@ import React, {useState, useEffect} from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, Image, Animated } from "react-native"
 import { COLORS, FONT } from '../../constants/theme';
 import FadeInView from '../../constants/FadeInView';
-import { useFonts } from 'expo-font';
 import { getStorage, ref, getDownloadURL } from "firebase/storage";
 import { fb_app, fb_storage } from '../../firebaseConfig';
 
@@ -19,28 +18,11 @@ function WelcomeScreen({navigation}) {
             // Handle any errors
         });
     },[]);
-    
-
-    //font :(
-    const [fontsLoaded] = useFonts({
-        "DM-Sans": require('../../assets/fonts/DMSans-Regular.ttf'),
-        "DM-Sans-I": require('../../assets/fonts/DMSans-Italic.ttf'),
-        "DM-Sans-B": require('../../assets/fonts/DMSans-Bold.ttf'),
-        "DM-Sans-BI": require('../../assets/fonts/DMSans-BoldItalic.ttf'),
-        "DM-Sans-L": require('../../assets/fonts/DMSans-Light.ttf'),
-        "DM-Sans-LI": require('../../assets/fonts/DMSans-LightItalic.ttf'),
-        "DM-Sans-EL": require('../../assets/fonts/DMSans-ExtraLight.ttf'),
-        "DM-Sans-ELI": require('../../assets/fonts/DMSans-ExtraLightItalic.ttf'),
-    });
-
-    if (!fontsLoaded) {
-        return null;
-    }
 
     return (
         <View style={styles.container}> 
             <FadeInView>
-                <Text style={[styles.title, {fontFamily: "DM-Sans-B"}]}>
+                <Text style={styles.title}>
                     Empathy Bytes
                 </Text>
             </FadeInView>
@@ -51,7 +33,7 @@ function WelcomeScreen({navigation}) {
                 </View>
             </FadeInView>
             <FadeInView delay={500}>
-                <Text style={[styles.text, {fontFamily: "DM-Sans-B"}]}>
+                <Text style={styles.text}>
                     creating tech centered around empathy
                 </Text>
             </FadeInView>
@@ -84,9 +66,10 @@ const styles = StyleSheet.create({
         color: COLORS.primary,
         fontSize: 20,
         fontWeight: "bold",
+        fontFamily: "Lexend_400Regular",
         // position: "absolute",
         textAlign: "center",
-        paddingBottom: 30,
+        padding: 30,
     },
     logo: {
         width: 200,
@@ -109,9 +92,11 @@ const styles = StyleSheet.create({
         fontWeight: "bold",
         textAlign: "center",
         fontSize: 15,
+        fontFamily: "Lexend_400Regular"
     },
     title: {
         fontSize: 60,
+        fontFamily: "Lexend_400Regular",
         //fontWeight: "bold",
         color: COLORS.primary,
         textAlign: "center",

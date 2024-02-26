@@ -1,27 +1,11 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, Image } from "react-native"
-import { useFonts } from 'expo-font';
 import { COLORS, FONT } from '../../constants/theme';
 
 function ContactUs({ navigation, route }) {
-    const [fontsLoaded] = useFonts({
-        "DM-Sans": require('../../assets/fonts/DMSans-Regular.ttf'),
-        "DM-Sans-I": require('../../assets/fonts/DMSans-Italic.ttf'),
-        "DM-Sans-B": require('../../assets/fonts/DMSans-Bold.ttf'),
-        "DM-Sans-BI": require('../../assets/fonts/DMSans-BoldItalic.ttf'),
-        "DM-Sans-L": require('../../assets/fonts/DMSans-Light.ttf'),
-        "DM-Sans-LI": require('../../assets/fonts/DMSans-LightItalic.ttf'),
-        "DM-Sans-EL": require('../../assets/fonts/DMSans-ExtraLight.ttf'),
-        "DM-Sans-ELI": require('../../assets/fonts/DMSans-ExtraLightItalic.ttf'),
-    });
-
-    if (!fontsLoaded) {
-        return null;
-    }
-
     return (
         <View style={styles.container}> 
-            <Text style={styles.titleText}>
+            <Text style={styles.title}>
                 Contact Us
             </Text>
             <Image
@@ -33,10 +17,10 @@ function ContactUs({ navigation, route }) {
             Contact our VIP Coordinator at alison.valk@library.gatech.edu for more information and additional team leader contacts.
             </Text>
             <TouchableOpacity style={styles.goButton} onPress={() => navigation.navigate('Home')} >
-                    <Text  style={styles.goButtonText}>
+                    <Text style={styles.goButtonText}>
                         Go Back
                     </Text>
-                </TouchableOpacity>
+            </TouchableOpacity>
         </View>
     );
 }
@@ -62,11 +46,7 @@ const styles = StyleSheet.create({
         fontSize: 16,
         margin: 20,
         fontWeight: "bold",
-    },
-    title: {
-        fontSize: 20,
-        paddingTop: 10,
-        paddingBottom: 20
+        fontFamily: "Lexend_400Regular"
     },
     image: {
         width: 410,
@@ -74,11 +54,12 @@ const styles = StyleSheet.create({
         marginBottom: 10,
         borderRadius: 50,
     },
-    titleText: {
+    title: {
         fontSize: 30,
         fontWeight: 'bold',
         color: "white",
         margin: 20,
+        fontFamily: "Lexend_400Regular"
     },
     goButton: {
         borderRadius: 40,
@@ -87,6 +68,7 @@ const styles = StyleSheet.create({
         alignItems: "center",
         justifyContent: "center",
         backgroundColor: "#B3A369",
+        fontFamily: "Lexend_400Regular"
     },
     goButtonText: {
         color: COLORS.secondary,

@@ -1,31 +1,14 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, Image } from "react-native"
-import { useFonts } from 'expo-font';
 import HomescreenButton from '../../constants/HomescreenButton';
 
 function HomeScreen({navigation}) {
-    //font :(
-    const [fontsLoaded] = useFonts({
-        "DM-Sans": require('../../assets/fonts/DMSans-Regular.ttf'),
-        "DM-Sans-I": require('../../assets/fonts/DMSans-Italic.ttf'),
-        "DM-Sans-B": require('../../assets/fonts/DMSans-Bold.ttf'),
-        "DM-Sans-BI": require('../../assets/fonts/DMSans-BoldItalic.ttf'),
-        "DM-Sans-L": require('../../assets/fonts/DMSans-Light.ttf'),
-        "DM-Sans-LI": require('../../assets/fonts/DMSans-LightItalic.ttf'),
-        "DM-Sans-EL": require('../../assets/fonts/DMSans-ExtraLight.ttf'),
-        "DM-Sans-ELI": require('../../assets/fonts/DMSans-ExtraLightItalic.ttf'),
-    });
-
-    if (!fontsLoaded) {
-        return null;
-    }
-
     return (
         <View style={styles.container}>
-            <HomescreenButton text="About Us" style={styles.button} font="DM-Sans-B" onPress={() => navigation.navigate('About Us')}></HomescreenButton>
-            <HomescreenButton text="Projects" style={styles.button} font="DM-Sans-B" onPress={() => navigation.navigate('Projects')}></HomescreenButton>
-            <HomescreenButton text="Teams" style={styles.button} font="DM-Sans-B" onPress={() => navigation.navigate('Teams')}></HomescreenButton>
-            <HomescreenButton text="Contact Us" style={styles.button} font="DM-Sans-B" onPress={() => navigation.navigate('Contact Us')}></HomescreenButton>
+            <HomescreenButton text="About Us" style={styles.button} onPress={() => navigation.navigate('About Us')}/>
+            <HomescreenButton text="Projects" style={styles.button} onPress={() => navigation.navigate('Projects')}/>
+            <HomescreenButton text="Teams" style={styles.button} onPress={() => navigation.navigate('Teams')}/>
+            <HomescreenButton text="Contact Us" style={styles.button} onPress={() => navigation.navigate('Contact Us')}/>
             {/*<Text style={[styles.text, {fontFamily: "DM-Sans-BI"}]}>
                 Welcome to the home screen!!
             </Text>

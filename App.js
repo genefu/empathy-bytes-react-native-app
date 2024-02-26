@@ -9,15 +9,20 @@ import IndividualProject from "./app/screens/IndividualProject.js";
 import AboutUs from "./app/screens/AboutUs.js";
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { useFonts } from 'expo-font';
+import { useFonts, Lexend_400Regular } from '@expo-google-fonts/lexend';
 import ContactUs from './app/screens/ContactUs.js';
 
 const Stack = createNativeStackNavigator();
 
 export default function App() {
-  const [fontsLoaded] = useFonts({
-    "DMSans": require('./assets/fonts/DMSans-Regular.ttf'),
+  //add any fonts here, they can be used globally
+  const [fontsLoaded, fontError] = useFonts({
+    Lexend_400Regular,
   });
+
+  if (!fontsLoaded && !fontError) {
+    return <Text> Loading... </Text>
+  };
   
   return (
     <NavigationContainer>
