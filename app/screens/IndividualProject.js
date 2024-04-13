@@ -145,7 +145,7 @@ const styles = StyleSheet.create({
         // fontWeight: 'bold',
         color: "#FFFFFF",
         textAlign: "center",
-        fontFamily: "Lexend_400Regular",
+        fontFamily: "Lexend_700Bold",
         marginLeft: 20,
         marginRight: 20,
     },

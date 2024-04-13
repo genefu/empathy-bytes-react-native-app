@@ -26,7 +26,6 @@ const styles = StyleSheet.create({
   captionText: {
     position: 'absolute',
     fontSize: 30,
-    fontWeight: 'bold',
     fontFamily: "Lexend_700Bold",
     zIndex: 1,
     position: 'absolute',

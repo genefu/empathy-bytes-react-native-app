@@ -146,7 +146,7 @@ const styles = StyleSheet.create({
     },
     titleText: {
         fontSize: 50,
-        fontFamily: "Lexend_400Regular",
+        fontFamily: "Lexend_700Bold",
         color: COLORS.secondary,
         textAlign: "center",
         //fontWeight: 'bold',
@@ -154,8 +154,7 @@ const styles = StyleSheet.create({
     },
     captionText: {
         fontSize: 30,
-        fontWeight: 'bold',
-        fontFamily: "Lexend_400Regular",
+        fontFamily: "Lexend_700Bold",
         color: COLORS.primary,
         zIndex: 1,
         position: 'absolute',

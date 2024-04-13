@@ -65,7 +65,7 @@ const styles = StyleSheet.create({
     text: {
         color: COLORS.primary,
         fontSize: 20,
-        fontWeight: "bold",
+        //fontWeight: "bold",
         fontFamily: "Lexend_400Regular",
         // position: "absolute",
         textAlign: "center",
@@ -89,14 +89,14 @@ const styles = StyleSheet.create({
     },
     goButtonText: {
         color: "black",
-        fontWeight: "bold",
+        //fontWeight: "bold",
         textAlign: "center",
         fontSize: 15,
-        fontFamily: "Lexend_400Regular"
+        fontFamily: "Lexend_700Bold"
     },
     title: {
         fontSize: 60,
-        fontFamily: "Lexend_400Regular",
+        fontFamily: "Lexend_700Bold",
         //fontWeight: "bold",
         color: COLORS.primary,
         textAlign: "center",

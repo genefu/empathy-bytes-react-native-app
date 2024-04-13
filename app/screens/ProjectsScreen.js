@@ -60,11 +60,11 @@ const styles = StyleSheet.create({
     },
     title: {
         fontSize: 30,
-        fontWeight:"bold",
+        //fontWeight:"bold",
         color: COLORS.secondary,
         marginTop: -30,
         paddingBottom: 20,
-        fontFamily: "Lexend_400Regular",
+        fontFamily: "Lexend_700Bold",
     },
     separator: {
         height: 10

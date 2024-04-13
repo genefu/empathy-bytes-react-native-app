@@ -88,8 +88,8 @@ const styles = StyleSheet.create({
         textAlign: "center",
         fontSize: 16,
         margin: 20,
-        fontWeight: "bold",
-        fontFamily: "Lexend_400Regular"
+        //fontWeight: "bold",
+        fontFamily: "Lexend_700Bold"
     },
     image: {
         width: 410,
@@ -99,10 +99,10 @@ const styles = StyleSheet.create({
     },
     titleText: {
         fontSize: 30,
-        fontWeight: 'bold',
+        //fontWeight: 'bold',
         color: "white",
         margin: 20,
-        fontFamily: "Lexend_400Regular"
+        fontFamily: "Lexend_700Bold"
     },
     goButton: {
         borderRadius: 40,
@@ -114,10 +114,10 @@ const styles = StyleSheet.create({
     },
     goButtonText: {
         color: COLORS.tertiary,
-        fontWeight: "bold",
+        //fontWeight: "bold",
         textAlign: "center",
         fontSize: 15,
-        fontFamily: "Lexend_400Regular"
+        fontFamily: "Lexend_700Bold"
     },
     formBox: {
         width: "100%",

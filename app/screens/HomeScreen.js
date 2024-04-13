@@ -14,12 +14,14 @@ function HomeScreen({navigation}) {
     return (
         <View style={styles.container}>
             <Text style={styles.text}>
-                HOME
+                Home
             </Text>
-            <HomescreenButton text="About Us" style={styles.button} image={people} color={COLORS.primary} onPress={() => navigation.navigate('About Us')}></HomescreenButton>
-            <HomescreenButton text="Projects" style={styles.button} image={projects} color={COLORS.secondary} onPress={() => navigation.navigate('Projects')}></HomescreenButton>
-            <HomescreenButton text="Teams" style={styles.button} image={teams} color={COLORS.primary} onPress={() => navigation.navigate('Teams')}></HomescreenButton>
-            <HomescreenButton text="Contact Us" style={styles.button} image={contact} color={COLORS.secondary} onPress={() => navigation.navigate('Contact Us')}></HomescreenButton>
+            <View style={styles.list}>
+                <HomescreenButton text="About Us" style={styles.button} image={people} color="#193054" onPress={() => navigation.navigate('About Us')}></HomescreenButton>
+                <HomescreenButton text="Projects" style={styles.button} image={projects} color="#B3A369" onPress={() => navigation.navigate('Projects')}></HomescreenButton>
+                <HomescreenButton text="Teams" style={styles.button} image={teams} color="#193054" onPress={() => navigation.navigate('Teams')}></HomescreenButton>
+                <HomescreenButton text="Contact Us" style={styles.button} image={contact} color="#B3A369" onPress={() => navigation.navigate('Contact Us')}></HomescreenButton>
+            </View>
             {/*
             <TouchableOpacity onPress={() => navigation.navigate('Projects')} >
                 <Image
@@ -67,7 +69,8 @@ const styles = StyleSheet.create({
         color: COLORS.secondary,
         textAlign: "center",
         paddingBottom: 25,
-        fontSize: 30,
+        fontSize: 35,
+        fontWeight: 'bold',
         fontFamily: "Lexend_400Regular"
     },
     button: {
@@ -78,6 +81,10 @@ const styles = StyleSheet.create({
         paddingRight: 10,
         alignItems: "center",
     },
+    list: {
+        width: '100%',
+        alignItems: "center",
+    }
 })
 
 export default HomeScreen;

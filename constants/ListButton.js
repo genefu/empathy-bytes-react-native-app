@@ -108,10 +108,10 @@ const styles = StyleSheet.create({
     },
     text: {
         color: COLORS.white,
-        fontFamily: 'Lexend_400Regular',
-        fontWeight: 900,
+        fontFamily: 'Lexend_700Bold',
+        //fontWeight: 900,
         fontSize: 20,
-        fontWeight: "bold",
+        //fontWeight: "bold",
         textAlign: 'center',
     },
     typecontainer: {
