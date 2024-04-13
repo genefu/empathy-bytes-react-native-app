@@ -24,7 +24,7 @@ function IndividualProject({ navigation, route }) {
     //     });
     // },[]);
 
-    if (id == 1) {
+    if (id) {
         return (
             <GestureHandlerRootView style={styles.container}>
                 <BackArrow navigation={navigation} page='Home' color="#ABA174"/>
@@ -83,7 +83,7 @@ function IndividualProject({ navigation, route }) {
 
 
 const Section = (props) => {
-    console.log(props.text);
+    // console.log(props.text);
     return (
         <View style={styles.sectionContainer}>
             <Text style={styles.text}>
