@@ -36,7 +36,7 @@ const TeamItem = (props) => {
             name = {props.name}
             type = {props.type}
             dir = {props.id % 2 == 1 ? true : false}
-            image = {props.teamPic}
+            image = {props.picURL}
         >
         </ListButton>
     );
@@ -48,7 +48,7 @@ const renderItem = ({ item }) => {
     console.log(item.team)
     console.log(item.teamPic)
     return (
-        <TeamItem name={item.team} id={item.id} teamPic={item.teamPic}/>
+        <TeamItem name={item.team} id={item.id} teamPic={item.teamPic} picURL={item.picURL}/>
     )
 };
 
